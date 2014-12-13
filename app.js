@@ -4,7 +4,9 @@ angular.module( 'sample', [
   'sample.home',
   'sample.login',
   'angular-storage',
-  'angular-jwt'
+  'angular-jwt',
+  'game',
+  'mg-card'
 ])
 .config( function myAppConfig ( $routeProvider, authProvider, $httpProvider, $locationProvider,
   jwtInterceptorProvider) {
