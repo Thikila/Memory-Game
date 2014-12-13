@@ -1,21 +1,13 @@
-'use strict';
-/* App Controllers */
-
-
-var memoryGameApp = angular.module( 'sample.home', [
+angular.module( 'sample.home', [
 'auth0'
-]);
-
-
-memoryGameApp.factory('game', function() {
+])
+.factory('game', function() {
   var tileNames = ['8-ball', 'kronos', 'baked-potato', 'dinosaur', 'rocket', 'skinny-unicorn',
     'that-guy', 'zeppelin'];
 
   return new Game(tileNames);
-});
-
-
-memoryGameApp.controller('GameCtrl', function GameCtrl($scope, auth, game) {
+})
+.controller('GameCtrl', function HomeController($scope, auth, game) {
   $scope.auth = auth;
   $scope.game = game;
 
@@ -26,14 +18,8 @@ memoryGameApp.controller('GameCtrl', function GameCtrl($scope, auth, game) {
     store.remove('token');
     $location.path('/login');
   };
-});
-
-
-//usages:
-//- in the repeater as: <mg-card tile="tile"></mg-card>
-//- card currently being matched as: <mg-card tile="game.firstPick"></mg-card>
-
-memoryGameApp.directive('mgCard', function() {
+})
+.directive('mgCard', function() {
   return {
     restrict: 'E',
     // instead of inlining the template string here, one could use templateUrl: 'mg-card.html'

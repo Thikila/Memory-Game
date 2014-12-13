@@ -19,6 +19,11 @@ angular.module( 'sample', [
       controller: 'LoginCtrl',
       templateUrl: 'login/login.html',
       pageTitle: 'Login'
+    })
+    .when( '/game',{
+      controller: 'Game',
+      templateUrl: 'game.html',
+      pageTitle: 'HolidayJS Sponsor Matching'
     });
 
 
