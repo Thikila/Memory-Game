@@ -1,13 +1,9 @@
 
   var myDataRef = new Firebase('https://holidayjs.firebaseio.com/');
 
-  var CLIENTID = localStorage.getItem('clientId');
-  var USERNAME = localStorage.getItem('name');
-
   function updateScore(turns){
-    var name = USERNAME;
-    var turns = turns;
-    var clientId = CLIENTID;
+    var name = localStorage.getItem('name');
+    var clientId = localStorage.getItem('clientId');;
 
     var usersRef = myDataRef.child("Users");
     var userRef = usersRef.child(name);
