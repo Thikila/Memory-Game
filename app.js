@@ -4,16 +4,14 @@ angular.module( 'sample', [
   'sample.home',
   'sample.login',
   'angular-storage',
-  'angular-jwt',
-  'game',
-  'mg-card'
+  'angular-jwt'
 ])
 .config( function myAppConfig ( $routeProvider, authProvider, $httpProvider, $locationProvider,
   jwtInterceptorProvider) {
   $routeProvider
     .when( '/', {
-      controller: 'GameCtrl',
-      templateUrl: 'game/game.html',
+      controller: 'HomeCtrl',
+      templateUrl: 'home/home.html',
       pageTitle: 'HolidayJS Sponsor Matching',
       requiresLogin: true
     })
