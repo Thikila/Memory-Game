@@ -3,6 +3,7 @@ angular.module( 'sample', [
   'ngRoute',
   'sample.home',
   'sample.login',
+  'sample.game',
   'angular-storage',
   'angular-jwt'
 ])
