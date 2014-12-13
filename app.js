@@ -10,8 +10,8 @@ angular.module( 'sample', [
   jwtInterceptorProvider) {
   $routeProvider
     .when( '/', {
-      controller: 'HomeCtrl',
-      templateUrl: 'home/home.html',
+      controller: 'GameCtrl',
+      templateUrl: 'game/game.html',
       pageTitle: 'HolidayJS Sponsor Matching',
       requiresLogin: true
     })
