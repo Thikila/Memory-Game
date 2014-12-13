@@ -9,37 +9,19 @@
   <script src="lib/angular/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/game.js"></script>
-  <script>
-  var myDataRef = new Firebase('https://holidayjs.firebaseio.com/');
-  </script>
+  <script src="js/fbUpdateScore.js"></script>
 </head>
 <body ng-controller="GameCtrl">
 
     <input type='text' id='name' placeholder='Name'>
     <input type='text' id='turns' placeholder='Message'>
+
     <script>
       $('#turns').keypress(function (e) {
         if (e.keyCode == 13) {
-          var name = $('#name').val();
-          var turns = $('#turns').val();
-
-          var usersRef = new Firebase('https://holidayjs.firebaseio.com/Users');
-          var userRef = usersRef.child(name);
-
-          var userClientIdRef = userRef.child("clientId");
-          var userNameRef = userRef.child("name");
-          var userTurnsRef = userRef.child("turns");
-
-          userClientIdRef.set('lksoijoij2823ujl');
-          userNameRef.set(name);
-          userTurnsRef.set(turns);
-
+          updateScore($('#turns').val());
           $('#turns').val('');
         }
-      });
-
-      myDataRef.on('child_added', function(snapshot) {
-        //We'll fill this in later.
       });
     </script>
 
