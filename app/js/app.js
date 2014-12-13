@@ -15,7 +15,7 @@ memoryGameApp.factory('game', function() {
 
 memoryGameApp.controller('GameCtrl', function GameCtrl($scope, game) {
   $scope.game = game;
-  $scope.user = window.USER;
+  $scope.user = localStorage.getItem('name');
 });
 
 

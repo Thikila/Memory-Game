@@ -9,8 +9,11 @@
   <script src="js/app.js"></script>
   <script src="js/game.js"></script>
 </head>
+
 <body ng-controller="GameCtrl">
-  <div>O hai, {{user}}</div>
+
+<div id="layout">
+  <div>Happy HolidayJS, {{user}}!</div>
   <div>Pairs left to match: {{game.unmatchedPairs}}</div>
   <div>Matching: {{game.firstPick.title}}</div>
 
@@ -33,5 +36,7 @@
   </table>
 
   <div class="message">{{game.message}}</div>
+</div>
+
 </body>
 </html>

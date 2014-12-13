@@ -1,7 +1,19 @@
 /* app css stylesheet */
+html {
+    width: 100%;
+    color: rgb(47, 44, 43);
+    font: bold 100%/1.5 Helvetica Neue Condensed, sans-serif;
+    text-align: center;
+}
+
+#layout {
+    width: 800px;
+    margin: 0 auto;
+}
 
 div {
   font-size: 30px;
+  text-align: left;
 }
 
 .container {
@@ -61,7 +73,7 @@ div {
 
 
 .card .back {
-  background: blue;
+  background: white;
   -webkit-transform: rotateY( 180deg );
   -moz-transform: rotateY( 180deg );
   -ms-transform: rotateY( 180deg );
