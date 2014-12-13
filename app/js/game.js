@@ -34,6 +34,7 @@ function Game(tileNames) {
       }
 
       this.firstPick = tile;
+      this.title = tile.title;
       this.message = Game.MESSAGE_ONE_MORE;
 
     } else {
