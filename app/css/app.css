@@ -16,6 +16,20 @@ div {
   text-align: left;
 }
 
+body {
+  -webkit-perspective: 650px;
+  perspective: 650px;
+}
+
+.gameboard {
+  -webkit-transform: rotateX( 15deg );
+  -moz-transform: rotateX( 15deg );
+  -ms-transform: rotateX( 15deg );
+  -o-transform: rotateX( 15deg );
+  transform: rotateX( 15deg );
+  margin: 0 auto;
+}
+
 .container {
   width: 150px;
   height: 150px;
@@ -82,6 +96,5 @@ div {
 }
 
 .message {
-  width: 660px;
   text-align: center;
 }

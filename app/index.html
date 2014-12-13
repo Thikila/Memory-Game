@@ -16,8 +16,9 @@
   <div>Happy HolidayJS, {{user}}!</div>
   <div>Pairs left to match: {{game.unmatchedPairs}}</div>
   <div>Matching: {{game.firstPick.title}}</div>
+  <div class="message">{{game.message}}</div>
 
-  <table>
+  <table class = "gameboard">
     <tr ng-repeat="row in game.grid">
       <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
 
