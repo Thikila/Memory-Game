@@ -1,5 +1,5 @@
 angular.module( 'sample.home', [
-'auth0'
+'auth0', 'game', 'mgCard'
 ])
 .factory('game', function() {
   var tileNames = ['8-ball', 'kronos', 'baked-potato', 'dinosaur', 'rocket', 'skinny-unicorn',
