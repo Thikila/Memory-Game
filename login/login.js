@@ -7,7 +7,7 @@ angular.module( 'sample.login', [
     auth.signin({}, function(profile, token) {
       store.set('profile', profile);
       store.set('token', token);
-      $location.path("/");
+      $location.path("game/");
     }, function(error) {
       console.log("There was an error logging in", error);
     });

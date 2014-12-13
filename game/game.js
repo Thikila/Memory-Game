@@ -2,7 +2,9 @@
 /* App Controllers */
 
 
-var memoryGameApp = angular.module('memoryGameApp', []);
+var memoryGameApp = angular.module( 'sample.home', [
+'auth0'
+]);
 
 
 memoryGameApp.factory('game', function() {
@@ -13,8 +15,17 @@ memoryGameApp.factory('game', function() {
 });
 
 
-memoryGameApp.controller('GameCtrl', function GameCtrl($scope, game) {
+memoryGameApp.controller('GameCtrl', function GameCtrl($scope, auth, game) {
+  $scope.auth = auth;
   $scope.game = game;
+
+
+  $scope.logout = function() {
+    auth.signout();
+    store.remove('profile');
+    store.remove('token');
+    $location.path('/login');
+  };
 });
 
 
