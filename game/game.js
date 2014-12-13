@@ -7,7 +7,7 @@ angular.module( 'sample.game', [
 
   return new Game(tileNames);
 })
-.controller('GameCtrl', function HomeController($scope, auth, game, store) {
+.controller('GameCtrl', function HomeController($scope, auth, game, store, $location) {
   $scope.auth = auth;
   $scope.game = game;
 
