@@ -5,8 +5,8 @@ div {
 }
 
 .container {
-  width: 165px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   position: relative;
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
@@ -18,6 +18,9 @@ div {
 .card {
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
+  border: 2px solid gray;
+
   -webkit-transition: -webkit-transform 1s;
   -moz-transition: -moz-transform 1s;
   -ms-transition: -ms-transform 1s;
@@ -38,16 +41,21 @@ div {
   transform: rotateY( 180deg );
 }
 
-.card img {
+.card .image {
   display: block;
   height: 100%;
   width: 100%;
+  overflow: hidden;
   position: absolute;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+
+.card .image img {
+    max-width: 100%;
 }
 
 
