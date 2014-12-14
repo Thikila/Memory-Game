@@ -8,8 +8,8 @@ angular.module( 'sample.login', [
       store.set('profile', profile);
       store.set('token', token);
       localStorage.setItem('name', profile.name);
-      localStorage.setItem('clientId', profile.user_id)
-      $location.path("/");
+      localStorage.setItem('clientId', profile.user_id);
+      document.location.href= '/game.html';
     }, function(error) {
       console.log("There was an error logging in", error);
     });
