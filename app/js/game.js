@@ -51,15 +51,15 @@ function Game(tileNames, dollarTimeout) {
 
     } else {
 
-      $timeout.cancel(this.promise);
+      dollarTimeout.cancel(this.promise);
 
       if (this.firstPick.title === tile.title) {
         this.unmatchedPairs--;
-		this.totalClickAttempts = this.totalClickAttempts + 1;
+		    this.totalClickAttempts = this.totalClickAttempts + 1;
         this.message = (this.unmatchedPairs > 0) ? Game.MESSAGE_MATCH : Game.MESSAGE_WON;
         this.firstPick = this.secondPick = undefined;
       } else {
-		this.totalClickAttempts = this.totalClickAttempts + 1;
+		    this.totalClickAttempts = this.totalClickAttempts + 1;
         this.secondPick = tile;
         this.message = Game.MESSAGE_MISS;
       }
