@@ -9,7 +9,7 @@ memoryGameApp.factory('game', function() {
   var tileNames = ['AuthO', 'famo', 'Firebase', 'frontendmasters', 'google', 'ionic',
     'microsoft', 'strongloop'];
 
-  return new Game(tileNames);
+  return new Game(tileNames, $timeout);
 });
 
 

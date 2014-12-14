@@ -12,7 +12,7 @@ Tile.prototype.flip = function() {
 
 
 
-function Game(tileNames) {
+function Game(tileNames, dollarTimeout) {
   var tileDeck = makeDeck(tileNames);
   this.grid = makeGrid(tileDeck);
   this.message = Game.MESSAGE_CLICK;
@@ -36,6 +36,18 @@ function Game(tileNames) {
       this.firstPick = tile;
       this.title = tile.title;
       this.message = Game.MESSAGE_ONE_MORE;
+
+      var self = this;
+      this.promise = dollarTimeout(function(){
+
+        self.title = undefined;
+
+        self.firstPick = self.secondPick = undefined;
+        self.message = Game.MESSAGE_MISS;
+        tile.flip();
+        
+      }, 5000);
+
 
     } else {
 
