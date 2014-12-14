@@ -18,25 +18,10 @@
 <div id="layout">
   <div>Happy HolidayJS, {{user}}!</div>
 
-    <!--input type='text' id='name' placeholder='Name'>
-    <input type='text' id='turns' placeholder='Message'>
-
-    <script>
-      $('#turns').keypress(function (e) {
-        if (e.keyCode == 13) {
-          updateScore($('#turns').val());
-          $('#turns').val('');
-        }
-      });
-    </script-->
-
-
   <div>Pairs left to match: {{game.unmatchedPairs}}</div>
   <div>Matching: {{game.title}}</div>
-  
-  <table>
   <div>Match Attempts: {{game.totalClickAttempts}}</div>
-  <div>Matching: {{game.firstPick.title}}</div>
+  
   <div class="message">{{game.message}}</div>
 
   <table class = "gameboard">

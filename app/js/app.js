@@ -5,7 +5,7 @@
 var memoryGameApp = angular.module('memoryGameApp', []);
 
 
-memoryGameApp.factory('game', function() {
+memoryGameApp.factory('game', function($timeout) {
   var tileNames = ['AuthO', 'famo', 'Firebase', 'frontendmasters', 'google', 'ionic',
     'microsoft', 'strongloop'];
 
