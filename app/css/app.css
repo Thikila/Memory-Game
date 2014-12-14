@@ -1,12 +1,38 @@
 /* app css stylesheet */
+html {
+    width: 100%;
+    color: rgb(47, 44, 43);
+    font: bold 100%/1.5 Helvetica Neue Condensed, sans-serif;
+    text-align: center;
+}
+
+#layout {
+    width: 800px;
+    margin: 0 auto;
+}
 
 div {
   font-size: 30px;
+  text-align: left;
+}
+
+body {
+  -webkit-perspective: 650px;
+  perspective: 650px;
+}
+
+.gameboard {
+  -webkit-transform: rotateX( 15deg );
+  -moz-transform: rotateX( 15deg );
+  -ms-transform: rotateX( 15deg );
+  -o-transform: rotateX( 15deg );
+  transform: rotateX( 15deg );
+  margin: 0 auto;
 }
 
 .container {
-  width: 165px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   position: relative;
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
@@ -18,6 +44,9 @@ div {
 .card {
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
+  border: 2px solid gray;
+
   -webkit-transition: -webkit-transform 1s;
   -moz-transition: -moz-transform 1s;
   -ms-transition: -ms-transform 1s;
@@ -38,10 +67,11 @@ div {
   transform: rotateY( 180deg );
 }
 
-.card img {
+.card .image {
   display: block;
   height: 100%;
   width: 100%;
+  overflow: hidden;
   position: absolute;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -50,10 +80,14 @@ div {
   backface-visibility: hidden;
 }
 
+.card .image img {
+    max-width: 100%;
+}
+
 
 
 .card .back {
-  background: blue;
+  background: white;
   -webkit-transform: rotateY( 180deg );
   -moz-transform: rotateY( 180deg );
   -ms-transform: rotateY( 180deg );
@@ -62,6 +96,5 @@ div {
 }
 
 .message {
-  width: 660px;
   text-align: center;
 }

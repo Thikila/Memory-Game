@@ -5,16 +5,17 @@
 var memoryGameApp = angular.module('memoryGameApp', []);
 
 
-memoryGameApp.factory('game', function() {
-  var tileNames = ['8-ball', 'kronos', 'baked-potato', 'dinosaur', 'rocket', 'skinny-unicorn',
-    'that-guy', 'zeppelin'];
+memoryGameApp.factory('game', function($timeout) {
+  var tileNames = ['AuthO', 'famo', 'Firebase', 'frontendmasters', 'google', 'ionic',
+    'microsoft', 'strongloop'];
 
-  return new Game(tileNames);
+  return new Game(tileNames, $timeout);
 });
 
 
 memoryGameApp.controller('GameCtrl', function GameCtrl($scope, game) {
   $scope.game = game;
+  $scope.user = localStorage.getItem('name');
 });
 
 
@@ -31,8 +32,8 @@ memoryGameApp.directive('mgCard', function() {
     // index.html
     template: '<div class="container">' +
                 '<div class="card" ng-class="{flipped: tile.flipped}">' +
-                  '<img class="front" ng-src="img/back.png">' +
-                  '<img class="back" ng-src="img/{{tile.title}}.png">' +
+                  '<div class="image front"><img ng-src="img/back.png"></div>' +
+                  '<div class="image back"><img ng-src="img/{{tile.title}}.png"></div>' +
                 '</div>' +
               '</div>',
     scope: {

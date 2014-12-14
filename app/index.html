@@ -4,16 +4,27 @@
   <meta charset="utf-8">
   <title>Memory Game</title>
   <link rel="stylesheet" href="css/app.css">
+  <script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <script src="js/extras.js"></script>
   <script src="lib/angular/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/game.js"></script>
-  <script src="js/extras.js"></script>
+  <script src="js/fbUpdateScore.js"></script>
 </head>
-<body ng-controller="GameCtrl">
-  <div>Pairs left to match: {{game.unmatchedPairs}}</div>
-  <div>Matching: {{game.firstPick.title}}</div>
 
-  <table>
+<body ng-controller="GameCtrl">
+
+<div id="layout">
+  <div>Happy HolidayJS, {{user}}!</div>
+
+  <div>Pairs left to match: {{game.unmatchedPairs}}</div>
+  <div>Matching: {{game.title}}</div>
+  <div>Match Attempts: {{game.totalClickAttempts}}</div>
+  
+  <div class="message">{{game.message}}</div>
+
+  <table class = "gameboard">
     <tr ng-repeat="row in game.grid">
       <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
 
@@ -22,8 +33,8 @@
         -->
         <div class="container">
           <div class="card" ng-class="{flipped: tile.flipped}">
-              <img class="front" ng-src="img/back.png">
-              <img class="back" ng-src="img/{{tile.title}}.png">
+              <div class="image front"><img ng-src="img/back.png"></div>
+              <div class="image back"><img ng-src="img/{{tile.title}}.png"></div>
           </div>
         </div>
 
@@ -31,6 +42,7 @@
     </tr>
   </table>
 
-  <div class="message">{{game.message}}</div>
+</div>
+
 </body>
 </html>
