@@ -39,6 +39,8 @@ function Game(tileNames) {
 
     } else {
 
+      $timeout.cancel(this.promise);
+
       if (this.firstPick.title === tile.title) {
         this.unmatchedPairs--;
         this.message = (this.unmatchedPairs > 0) ? Game.MESSAGE_MATCH : Game.MESSAGE_WON;
